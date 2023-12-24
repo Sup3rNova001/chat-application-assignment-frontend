@@ -22,7 +22,7 @@ const Login = () => {
   const handleSubmit = () => {
     // console.log({ email, password });
 
-    const api = "http://localhost:3000/api/login";
+    const api = "https://chat-app-assignment-backend.onrender.com/api/login";
     axios
       .post(api, { email, password })
       .then((res) => {

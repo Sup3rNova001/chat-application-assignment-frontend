@@ -18,7 +18,7 @@ const Home = () => {
 
   useEffect(() => {
     // Initialize Socket.IO connection
-    const newSocket = io("http://localhost:3000");
+    const newSocket = io("https://chat-app-assignment-backend.onrender.com");
     setSocket(newSocket);
 
     return () => {
@@ -29,7 +29,7 @@ const Home = () => {
 
   useEffect(() => {
     const chatId = chats[activeChat]?._id;
-    const api = `http://localhost:3000/api/messages/get/${chatId}`;
+    const api = `https://chat-app-assignment-backend.onrender.com/api/messages/get/${chatId}`;
     const userToken = localStorage.getItem("token");
 
     if (chatId && socket) {
@@ -53,7 +53,7 @@ const Home = () => {
   }, [activeChat, chats, socket]);
 
   useEffect(() => {
-    const api = "http://localhost:3000/api/chats";
+    const api = "https://chat-app-assignment-backend.onrender.com/api/chats";
     const userToken = localStorage.getItem("token");
 
     axios
@@ -73,7 +73,7 @@ const Home = () => {
     // console.log(content);
     const chatId = chats[activeChat]?._id;
     const userToken = localStorage.getItem("token");
-    const api = "http://localhost:3000/api/messages/send";
+    const api = "https://chat-app-assignment-backend.onrender.com/api/messages/send";
 
     if (chatId && socket) {
       // Emit a message event to the server

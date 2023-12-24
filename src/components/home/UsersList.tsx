@@ -10,7 +10,7 @@ const UsersList = ({
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const api = "http://localhost:3000/api/users/getAll";
+    const api = "https://chat-app-assignment-backend.onrender.com/api/users/getAll";
     axios
       .get(api)
       .then((res) => {
@@ -21,7 +21,7 @@ const UsersList = ({
   }, []);
 
   const handleClick = (userId: string) => {
-    const api = "http://localhost:3000/api/chats/create";
+    const api = "https://chat-app-assignment-backend.onrender.com/api/chats/create";
     const userToken = localStorage.getItem("token");
     axios
       .post(

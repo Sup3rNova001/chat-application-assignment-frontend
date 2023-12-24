@@ -23,7 +23,7 @@ const Register = () => {
 
     if (checkPasswordMatch(password, confirmPassword)) {
       console.log("Password match");
-      const api = "http://localhost:3000/api/register";
+      const api = "https://chat-app-assignment-backend.onrender.com/api/register";
       axios
         .post(api, {
           name: {
