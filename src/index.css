@@ -1,0 +1,35 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+/* Hide the default scrollbar */
+.hidden-scrollbar {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer/Edge */
+}
+
+/* Hide scrollbar for WebKit browsers (e.g., Chrome, Safari) */
+.hidden-scrollbar::-webkit-scrollbar {
+    width: 0;
+    /* Adjust as needed */
+    height: 0;
+}
+
+.hidden-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    /* Background color of the track */
+}
+
+.hidden-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Color of the scrollbar thumb */
+}
+
+/* Style scrollbar when hovered over */
+.hidden-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Adjust as needed */
+}
