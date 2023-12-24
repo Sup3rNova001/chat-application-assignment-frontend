@@ -117,7 +117,7 @@ const Home = () => {
       </div>
       <div className="w-2/3 flex flex-col">
         <div className="h-[10%]">
-          <Header users={chats[activeChat]?.participants} />
+          <Header users={chats[activeChat]?.participants || []} />
         </div>
         <div className="w-full h-[80%]">
           <Chat messagesData={messagesData} />

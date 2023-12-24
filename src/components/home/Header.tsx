@@ -1,4 +1,3 @@
-
 import iphone from "./../../assets/home/phone.svg";
 import ivideo from "./../../assets/home/video.svg";
 import { User } from "../../interfaces/home/User";
@@ -7,7 +6,11 @@ const Header = ({ users }: { users: User[] }) => {
     <div className="flex  w-full items-center justify-between h-full px-12 shadow-lg">
       <div className="flex items-center gap-4">
         <h1 className="text-[40px] font-semibold">
-          {users && users.length > 0 && users[0]?._id == localStorage.getItem("userId") ? users[1]?.name?.firstName + " " + users[1]?.name?.lastName : users[0]?.name?.firstName + " " + users[0]?.name?.lastName }
+          {users?.length > 1
+            ? users[0]?._id == localStorage.getItem("userId")
+              ? users[1]?.name?.firstName + " " + users[1]?.name?.lastName
+              : users[0]?.name?.firstName + " " + users[0]?.name?.lastName
+            : "Chat"}
         </h1>
 
         <span>
