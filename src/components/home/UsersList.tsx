@@ -2,15 +2,17 @@ import { useState, useEffect } from "react";
 import dummyuser from "./../../assets/dummyuser.svg";
 import axios from "axios";
 import { User } from "../../interfaces/home/User";
+import { useNavigate } from "react-router-dom";
 const UsersList = ({
   setShowUsers,
 }: {
   setShowUsers: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [users, setUsers] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
-    const api = "https://chat-app-assignment-backend.onrender.com/api/users/getAll";
+    const api =
+      "https://chat-app-assignment-backend.onrender.com/api/users/getAll";
     axios
       .get(api)
       .then((res) => {
@@ -21,7 +23,8 @@ const UsersList = ({
   }, []);
 
   const handleClick = (userId: string) => {
-    const api = "https://chat-app-assignment-backend.onrender.com/api/chats/create";
+    const api =
+      "https://chat-app-assignment-backend.onrender.com/api/chats/create";
     const userToken = localStorage.getItem("token");
     axios
       .post(
@@ -36,6 +39,7 @@ const UsersList = ({
       .then((res) => {
         setShowUsers(false);
         console.log(res.data);
+        navigate("/");
       })
       .catch((err) => console.error(err));
   };

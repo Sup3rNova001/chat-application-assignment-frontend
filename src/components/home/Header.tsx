@@ -2,12 +2,12 @@
 import iphone from "./../../assets/home/phone.svg";
 import ivideo from "./../../assets/home/video.svg";
 import { User } from "../../interfaces/home/User";
-const Header = ({ user }: { user: User }) => {
+const Header = ({ users }: { users: User[] }) => {
   return (
     <div className="flex  w-full items-center justify-between h-full px-12 shadow-lg">
       <div className="flex items-center gap-4">
         <h1 className="text-[40px] font-semibold">
-          {user?.name?.firstName + " " + user?.name?.lastName}
+          { users[0]?._id == localStorage.getItem("userId") ? users[1]?.name?.firstName + " " + users[1]?.name?.lastName : users[0]?.name?.firstName + " " + users[0]?.name?.lastName }
         </h1>
 
         <span>
