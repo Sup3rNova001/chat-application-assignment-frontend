@@ -7,7 +7,7 @@ const Header = ({ users }: { users: User[] }) => {
     <div className="flex  w-full items-center justify-between h-full px-12 shadow-lg">
       <div className="flex items-center gap-4">
         <h1 className="text-[40px] font-semibold">
-          { users[0]?._id == localStorage.getItem("userId") ? users[1]?.name?.firstName + " " + users[1]?.name?.lastName : users[0]?.name?.firstName + " " + users[0]?.name?.lastName }
+          {users && users.length > 0 && users[0]?._id == localStorage.getItem("userId") ? users[1]?.name?.firstName + " " + users[1]?.name?.lastName : users[0]?.name?.firstName + " " + users[0]?.name?.lastName }
         </h1>
 
         <span>
