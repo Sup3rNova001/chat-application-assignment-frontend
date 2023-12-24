@@ -1,4 +1,4 @@
-import React from "react";
+
 import iphone from "./../../assets/home/phone.svg";
 import ivideo from "./../../assets/home/video.svg";
 import { User } from "../../interfaces/home/User";

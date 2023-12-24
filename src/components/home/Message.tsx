@@ -1,4 +1,3 @@
-import React from "react";
 import dummyuser from "../../assets/dummyuser.svg";
 interface MessageProps {
   message: string;
